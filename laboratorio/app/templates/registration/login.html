@@ -1,7 +1,21 @@
-<h2>Iniciar sesión</h2>
+<!DOCTYPE html>
+<html>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Entrar</button>
-</form>
+<head>
+    <title>Iniciar Sesión</title>
+</head>
+
+<body>
+    <h2>Login de Usuarios</h2>
+    {% if form.errors %}
+    <p style="color:red;">Credenciales incorrectas. Intenta de nuevo.</p>
+    {% endif %}
+
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Entrar</button>
+    </form>
+</body>
+
+</html>

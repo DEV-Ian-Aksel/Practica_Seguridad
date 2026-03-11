@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crear Curso</title>
+</head>
+
+<body>
+    <h2>Formulario para Crear Curso</h2>
+    <p>Completa los siguientes datos para añadir un nuevo curso al sistema.</p>
+
+    <!-- FORMULARIO DE CREACIÓN SEGURO CON CSRF -->
+    <form method="POST" action="{% url 'crear_curso' %}">
+        {% csrf_token %} <!-- REQUISITO: PROTECCION CSRF -->
+
+        <!-- Renderiza los campos del formulario -->
+        {{ form.as_p }}
+
+        <button type="submit">Guardar Curso</button>
+    </form>
+
+    <br>
+    <a href="{% url 'panel' %}">Volver al Panel Principal</a>
+</body>
+
+</html>

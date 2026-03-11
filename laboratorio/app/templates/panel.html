@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Panel Principal</title>
+</head>
+
+<body>
+    <h1>Bienvenido al Panel ({{ user.username }})</h1>
+    <p>Has iniciado sesión correctamente.</p>
+    <ul>
+        <li><a href="{% url 'crear_curso' %}">Crear un Nuevo Curso</a></li>
+
+        <!-- Mostramos la sección Admin solo a los administradores -->
+        {% if user.is_superuser or request.user.groups.all.0.name == 'Admin' %}
+        <li><strong>Rol Administrador Detectado:</strong> <a href="{% url 'panel_admin' %}">Ir al Panel de
+                Administrador</a></li>
+        {% else %}
+        <li><strong>Rol Usuario Normal:</strong> Tu cuenta no tiene acceso al área de administración.</li>
+        {% endif %}
+    </ul>
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Cerrar Sesión</button>
+    </form>
+</body>
+
+</html>

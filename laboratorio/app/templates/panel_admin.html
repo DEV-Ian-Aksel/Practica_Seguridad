@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel de Administrador</title>
+</head>
+<body>
+    <h1>Panel de Administrador</h1>
+    <p>¡Hola, {{ user.username }}! Tienes privilegios de Administrador.</p>
+    <ul>
+        <li><a href="{% url 'panel' %}">Volver al Panel Normal</a></li>
+    </ul>
+</body>
+</html>
