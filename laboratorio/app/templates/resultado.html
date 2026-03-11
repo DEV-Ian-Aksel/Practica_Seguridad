@@ -1,0 +1,9 @@
+<h2>Resultado de búsqueda</h2>
+
+<p>Email buscado: {{ email_buscado }}</p>
+
+{% if usuario %}
+ <p>Usuario: {{ usuario.email }}</p>
+{% else %}
+ <p>No encontrado</p>
+{% endif %}
