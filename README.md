@@ -4,7 +4,7 @@ Práctica de seguridad web desarrollada con **Django** y **FastAPI**, organizada
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 Practica_Seguridad/
@@ -15,17 +15,17 @@ Practica_Seguridad/
 
 ---
 
-## 🔐 1. Autenticación (Login)
+## 1. Autenticación (Login)
 
 El proyecto implementa autenticación en dos enfoques distintos:
 
-- **Django (sesiones):** Se utiliza el sistema de autenticación integrado de Django, que provee un formulario de inicio de sesión listo para usar. Tras autenticarse correctamente, el usuario es redirigido a su panel correspondiente.
+- **Django (sesiones):** Se utiliza el sistema de autenticación integrado de Django, que provee un formulario de inicio de sesión listo para usar.
 
 - **FastAPI (tokens JWT):** Se expone un endpoint `POST /login` que valida las credenciales del usuario, verifica la contraseña almacenada en formato seguro y devuelve un token de acceso firmado digitalmente con una fecha de expiración.
 
 ---
 
-## 👥 2. Roles con Permisos Distintos
+## 2. Roles con Permisos Distintos
 
 Se definen dos roles con niveles de acceso diferenciados:
 
@@ -38,7 +38,7 @@ El acceso a las vistas está protegido mediante decoradores de Django que verifi
 
 ---
 
-## 📝 3. Formulario con Validación de Datos
+## 3. Formulario con Validación de Datos
 
 Se implementa un formulario para la creación de recursos (cursos) con las siguientes validaciones:
 
@@ -50,7 +50,7 @@ Los datos procesados siempre provienen de los datos ya validados y limpiados por
 
 ---
 
-## 🛡️ 4. Protección CSRF en Operaciones POST
+## 4. Protección CSRF en Operaciones POST
 
 Todos los formularios y endpoints POST están protegidos contra ataques **Cross-Site Request Forgery (CSRF)**:
 
@@ -61,7 +61,7 @@ Todos los formularios y endpoints POST están protegidos contra ataques **Cross-
 
 ---
 
-## 🔒 5. Sesiones Configuradas de Forma Segura
+## 5. Sesiones Configuradas de Forma Segura
 
 Las sesiones de usuario se configuran con los siguientes atributos de seguridad:
 
@@ -75,7 +75,7 @@ Las sesiones de usuario se configuran con los siguientes atributos de seguridad:
 
 ---
 
-## 🚀 Cómo Ejecutar
+## Cómo Ejecutar
 
 ### Django (`laboratorio/` y `sesiones_seguras/`)
 
