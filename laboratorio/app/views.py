@@ -9,8 +9,6 @@ from django.shortcuts import render, redirect
 
 from .forms import CrearCursoForm
 
-
-
 @csrf_protect
 def buscar_usuario(request):
     email = request.GET.get("email", "").strip()
