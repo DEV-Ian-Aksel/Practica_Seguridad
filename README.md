@@ -65,20 +65,4 @@ Refactorizar el módulo de login aplicando buenas prácticas de código, segurid
 * Incluir decoradores como @require_POST
 * Puede usar @csrf_exempt (opcional)
 
-📦 Salida esperada:
 
-1. Código completo del módulo de login refactorizado
-2. Código bien estructurado y listo para producción básica
-3. Logging correctamente aplicado en todo el flujo
-4. Funciones auxiliares (validación, request_id)
-5. Preparado para escalar a otros módulos
-6. Explicación breve de por qué se colocaron los logs
-
-📌 Restricciones:
-
-* No hacer el código innecesariamente complejo
-* Mantenerlo entendible (nivel estudiante avanzado)
-* No usar librerías externas innecesarias
-
-Aquí está mi código actual:
-[PEGA AQUÍ TU CÓDIGO]
