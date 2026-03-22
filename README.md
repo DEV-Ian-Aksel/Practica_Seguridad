@@ -42,3 +42,55 @@ El acceso a las vistas está protegido mediante decoradores de Django que verifi
 
 Se implementa un formulario para la creación de recursos (cursos) con las siguientes validaciones:
 
+- **Campos requeridos:** ningún campo puede enviarse vacío.
+- **Longitud:** se establecen límites mínimos y máximos de caracteres por campo.
+- **Validación personalizada:** se rechaza contenido con términos no permitidos, lanzando un mensaje de error descriptivo.
+
+Los datos procesados siempre provienen de los datos ya validados y limpiados por Django, nunca directamente del `request.POST`, lo que evita el uso de datos sin sanitizar.
+
+---
+
+## 4. Protección CSRF en Operaciones POST
+
+Todos los formularios y endpoints POST están protegidos contra ataques **Cross-Site Request Forgery (CSRF)**:
+
+- Se activa el middleware de CSRF de Django a nivel global en la configuración del proyecto.
+- Los formularios HTML incluyen un token CSRF generado automáticamente por Django.
+- Algunas vistas utilizan además el decorador `@csrf_protect` de forma explícita como capa adicional.
+- Las cookies CSRF están configuradas con atributos de seguridad (`HttpOnly`, `SameSite`).
+
+---
+
+## 5. Sesiones Configuradas de Forma Segura
+
+Las sesiones de usuario se configuran con los siguientes atributos de seguridad:
+
+| Atributo | Descripción |
+|----------|-------------|
+| **HttpOnly** | La cookie de sesión no es accesible desde JavaScript, mitigando ataques XSS |
+| **Secure** | La cookie solo se transmite por conexiones HTTPS (habilitado en producción) |
+| **SameSite** | Restringe el envío de cookies en peticiones cross-site, reduciendo el riesgo de CSRF |
+| **Expiración** | La sesión caduca automáticamente tras un tiempo definido de inactividad |
+| **Cierre en browser close** | La sesión finaliza al cerrar el navegador, sin persistencia |
+
+---
+
+## Cómo Ejecutar
+
+### Django (`laboratorio/` y `sesiones_seguras/`)
+
+```bash
+cd laboratorio/
+pip install -r ../requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+
+### FastAPI (`carpeta/`)
+
+```bash
+cd carpeta/
+pip install -r ../requirements.txt
+uvicorn main:app --reload
+# Documentación interactiva en: http://127.0.0.1:8000/docs
+```
