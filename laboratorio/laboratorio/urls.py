@@ -8,9 +8,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Redirecciones por conveniencia
-    path('', RedirectView.as_view(url='/accounts/login/', permanent=False)),
-    path('login/', RedirectView.as_view(url='/accounts/login/', permanent=False)),
-    path('login', RedirectView.as_view(url='/accounts/login/', permanent=False)),
+    path('', RedirectView.as_view(url='/login/', permanent=False)),
+    path('accounts/login/', RedirectView.as_view(url='/login/', permanent=False)),
+    path('login/', app.views.login_view, name='custom_login'),
 
     # rutas de login/logout que ya trae Django
     path('accounts/', include('django.contrib.auth.urls')),
