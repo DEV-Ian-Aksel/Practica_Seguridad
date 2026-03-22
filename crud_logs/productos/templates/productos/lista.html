@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de productos</title>
+</head>
+<body>
+    <h1>Productos</h1>
+
+    <a href="/productos/crear/">Crear nuevo producto</a>
+
+    <ul>
+        {% for producto in productos %}
+            <li>
+                {{ producto.nombre }} - ${{ producto.precio }} - Stock: {{ producto.stock }}
+                <a href="/productos/editar/{{ producto.id }}/">Editar</a>
+                <a href="/productos/eliminar/{{ producto.id }}/">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
