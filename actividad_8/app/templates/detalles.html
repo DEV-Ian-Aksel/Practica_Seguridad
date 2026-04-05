@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Detalles de la Persona</h1>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Nombre</th>
+            <td>{{ persona.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ persona.email }}</td>
+        </tr>
+        <tr>
+            <th>Teléfono</th>
+            <td>{{ persona.telefono }}</td>
+        </tr>
+    </table>
+
+    <a href="/listar/" class="btn btn-primary">Volver</a>
+    <a href="/actualizar/{{ persona_id }}/" class="btn btn-warning">Editar</a>
+</div>
+{% endblock %}

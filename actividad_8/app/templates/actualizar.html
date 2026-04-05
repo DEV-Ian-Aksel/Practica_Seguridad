@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Actualizar Persona</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Nombre:</label><br>
+        <input type="text" name="nombre" value="{{ persona.nombre }}" required><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" value="{{ persona.email }}" required><br>
+
+        <label>Teléfono:</label><br>
+        <input type="text" name="telefono" value="{{ persona.telefono }}" required><br>
+
+        <input type="submit" value="Actualizar" class="btn btn-success mt-3">
+    </form>
+</div>
+{% endblock %}

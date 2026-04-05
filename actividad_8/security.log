@@ -1,0 +1,24 @@
+[2026-04-05 21:01:32,728] INFO | Inicio de inserción de persona
+[2026-04-05 21:01:32,728] WARNING | Intento de inyección detectado | IP=127.0.0.1 | nombre=' OR 1=1 -- | endpoint=/insertar/ | resultado=blocked
+[2026-04-05 21:01:39,750] INFO | Inicio de inserción de persona
+[2026-04-05 21:01:39,750] WARNING | Intento de inyección detectado | IP=127.0.0.1 | nombre=' OR 1=1 -- | endpoint=/insertar/ | resultado=blocked
+[2026-04-05 21:01:43,803] INFO | Inicio de actualización | ID=5 | endpoint=/actualizar/5/ | resultado=attempt
+[2026-04-05 21:01:45,039] INFO | Inicio de actualización | ID=5 | endpoint=/actualizar/5/ | resultado=attempt
+[2026-04-05 21:01:45,040] WARNING | Intento sospechoso en actualización | ID=5 | IP=127.0.0.1 | endpoint=/actualizar/5/ | resultado=blocked
+[2026-04-05 21:02:41,993] INFO | Acceso a detalles | ID=3 | IP=127.0.0.1 | endpoint=/detalles/3/ | resultado=success
+[2026-04-05 21:02:47,475] WARNING | Intento de eliminación | ID=3 | IP=127.0.0.1 | endpoint=/borrar/3/ | resultado=attempt
+[2026-04-05 21:02:47,487] INFO | Persona eliminada | ID=3 | IP=127.0.0.1 | endpoint=/borrar/3/ | resultado=success
+[2026-04-05 21:02:49,447] INFO | Acceso a detalles | ID=3 | IP=127.0.0.1 | endpoint=/detalles/3/ | resultado=success
+[2026-04-05 21:02:49,448] WARNING | Detalle no encontrado | ID=3 | IP=127.0.0.1 | endpoint=/detalles/3/ | resultado=not_found
+[2026-04-05 21:03:03,864] INFO | Inicio de inserción de persona
+[2026-04-05 21:03:15,679] INFO | Inicio de inserción de persona
+[2026-04-05 21:03:15,683] INFO | Persona creada correctamente | ID=8 | IP=127.0.0.1 | endpoint=/insertar/ | resultado=success
+[2026-04-05 21:03:19,827] INFO | Inicio de actualización | ID=8 | endpoint=/actualizar/8/ | resultado=attempt
+[2026-04-05 21:03:26,207] WARNING | Intento de eliminación | ID=8 | IP=127.0.0.1 | endpoint=/borrar/8/ | resultado=attempt
+[2026-04-05 21:03:26,230] INFO | Persona eliminada | ID=8 | IP=127.0.0.1 | endpoint=/borrar/8/ | resultado=success
+[2026-04-05 21:03:27,878] INFO | Inicio de actualización | ID=8 | endpoint=/actualizar/8/ | resultado=attempt
+[2026-04-05 21:03:27,880] ERROR | Persona no encontrada | ID=8 | endpoint=/actualizar/8/ | resultado=not_found
+[2026-04-05 21:04:42,002] INFO | Inicio de actualización | ID=6 | endpoint=/actualizar/6/ | resultado=attempt
+[2026-04-05 21:04:48,730] INFO | Inicio de inserción de persona
+[2026-04-05 21:05:04,098] INFO | Inicio de inserción de persona
+[2026-04-05 21:05:04,103] INFO | Persona creada correctamente | ID=9 | IP=127.0.0.1 | endpoint=/insertar/ | resultado=success
